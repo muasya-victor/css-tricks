@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilele Shapes</title>
+    <style>
+        .rectangle {
+            background-color: black;
+            height: 100vh;
+            width: 100vh;
+        }
+
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #invisble-rect {
+            background-color: transparent;
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            animation-name: spin;
+            animation-duration: 500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+        }
+
+        @keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .big-circle {
+            height: 150px;
+            width:150px;
+            border: 30px solid yellow;
+        }
+
+        .side-circle {
+            position: relative;
+            height: 140px;
+            width:140px;
+        }
+
+        .right-side-circle {
+            margin-left: -31px;
+        }
+
+        .left-side-circle {
+            margin-right: -31px;
+        }
+
+        .top-circle {
+            top: -50%;
+        }
+
+        .bottom-circle {
+            bottom: -50%;
+        }
+
+        .small-circle {
+            height: 80px;
+            width: 80px;
+            background-color: red;
+        }
+
+        .curved-rect {
+            height: 150px;
+            width:250px;
+            background-color: black;
+            border: 40px 20px;
+            position: absolute;
+            left: -22%;
+        }
+
+        .center-circle {
+            z-index: 50;
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle center-div">
+        <div id="invisble-rect">
+
+            <!-- left half circle -->
+            <div class="circle big-circle side-circle left-side-circle">
+                <!-- black rect to cover part of circle -->
+                <div class="curved-rect top-circle"></div>
+            </div>
+            
+            <!-- center circle -->
+            <div class="circle big-circle center-div center-circle"> 
+                <div class="small-circle circle"></div>
+            </div>
+            
+            <!-- right half circle -->
+            <div class="circle big-circle side-circle bottom-circle right-side-circle">
+                <!-- black rect to cover part of circle -->
+                <div class="curved-rect bottom-circle"></div>
+            </div>
+            
+            
+        </div>
+
+
+    </div>
+</body>
+</html>
